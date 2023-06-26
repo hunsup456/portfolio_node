@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0 auto;
+      }
+      body {
+        margin-top: 50px;
+      }
+
+      table {
+        margin-top: 75px;
+        table-layout: fixed;
+        border-collapse: collapse;
+        font-size: 15px;
+        border-bottom: 3px double black;
+      }
+      table th {
+        height: 40px;
+        border-bottom: 3px double black;
+        text-align: center;
+      }
+      table td {
+        height: 100px;
+        text-align: center;
+      }
+      table td:nth-child(2) {
+        font-weight: bolder;
+        color: #524f0e;
+      }
+      table tr td:nth-child(5) {
+        text-align: justify;
+        padding-right: 10px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #c66262;
+      }
+      a,
+      button {
+        width: 70px;
+        height: 40px;
+        line-height: 40px;
+        /* background-color: black; */
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        display: inline-block;
+        background-color: #f19191;
+        border: 1px solid rgb(184, 169, 169);
+        border-radius: 10px;
+      }
+      button {
+        cursor: pointer;
+        margin: 20px 0 20px 10px;
+      }
+      a:hover,button:hover {
+        background-color: #e45151;
+      }
+      form {
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><span>My Music List</span></h1>
+
+    <table width="80%">
+      <tr>
+        <th width="5%">number</th>
+        <th width="10%">title</th>
+        <th width="5%">artist</th>
+        <th width="5%">location</th>
+        <th width="30%">description</th>
+        <th width="5%">play</th>
+        <th width="5%">modify</th>
+        <th width="5%">delete</th>
+      </tr>
+      <% data.forEach(function (list, index) { %>
+      <tr>
+        <td><%= list.id %></td>
+        <td><%= list.title %></td>
+        <td><%= list.artist %></td>
+        <td><%= list.location%></td>
+        <td><%= list.description %></td>
+        <td><a href="<%= list.link %>" target="_blank">유튜브</a></td>
+        <td><a href="/modify/<%= list.id %>">수정</a></td>
+        <td><a href="/delete/<%= list.id %>">삭제</a></td>
+      </tr>
+      <% }); %>
+    </table>
+    <form action="/create" method="get">
+      <button type="submit">생성</button>
+    </form>
+  </body>
+</html>

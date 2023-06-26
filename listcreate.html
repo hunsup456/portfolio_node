@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 70px;
+        height: 40px;
+        line-height: 40px;
+        /* background-color: black; */
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        display: inline-block;
+        background-color: #f19191;
+        border: 1px solid rgb(184, 169, 169);
+        border-radius: 10px;
+      }
+      button {
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      a:hover,
+      button:hover {
+        background-color: #e45151;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><span>Create Music list</span></h1>
+    <form method="post">
+      <fieldset>
+        <legend>Create Data</legend>
+        <table>
+          <tr>
+            <td><label for="">title</label></td>
+            <td><input type="text" name="title" id="" /></td>
+          </tr>
+          <tr>
+            <td><label for="">artist</label></td>
+            <td><input type="text" name="artist" id="" /></td>
+          </tr>
+          <tr>
+            <td><label for="">location</label></td>
+            <td><input type="text" name="location" id="" /></td>
+          </tr>
+          <tr>
+            <td><label for="">description</label></td>
+            <td>
+              <textarea name="description" cols="30" rows="10"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="">link</label></td>
+            <td><input type="text" name="link" id="" /></td>
+          </tr>
+        </table>
+      </fieldset>
+      <button type="submit">제출</button>
+    </form>
+  </body>
+</html>
